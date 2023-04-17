@@ -1,0 +1,12 @@
+<form action="/read-file-links" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Enviar arquivo</button>
+</form>
+
+<p><% if (typeof urls != 'undefined') { %></p>
+    <% for (let url of urls) { %>
+        <p>
+            <%= url %>
+        </p>
+    <% }; %>
+<p><% } %></p>

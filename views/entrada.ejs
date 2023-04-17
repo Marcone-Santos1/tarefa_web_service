@@ -1,0 +1,10 @@
+<form action="/read-file" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Enviar arquivo</button>
+</form>
+
+<div>
+    <p><% if (typeof file != 'undefined') { %></p>
+    <p><%= file %></p>
+    <p><% } %></p>
+</div>

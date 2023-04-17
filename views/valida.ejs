@@ -1,0 +1,12 @@
+<form action="/read-file-valida" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Enviar arquivo</button>
+</form>
+
+<p><% if (typeof links != 'undefined') { %></p>
+<% for (let link of links) { %>
+    <p>
+        link:<%= link.link %> <br><span>status: <%= link.status %></span>
+    </p>
+<% }; %>
+<p><% } %></p>
