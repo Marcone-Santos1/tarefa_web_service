@@ -17,15 +17,15 @@ app.use('/', entradaController)
 app.use('/', linkController)
 app.use('/', validaController)
 
-// app.use( async  (req, res, next) => {
-//     const erro = await new Error('Não encontrado...');
-//     erro.status = 404;
-//     next(erro);
-// });
-//
-// app.use( async (err, req, res, next) => {
-//     await res.status(err.status || 500);
-//     return res.render('notFound');
-// });
+app.use( async  (req, res, next) => {
+    const erro = await new Error('Não encontrado...');
+    erro.status = 404;
+    next(erro);
+});
+
+app.use( async (err, req, res, next) => {
+    await res.status(err.status || 500);
+    return res.render('notFound');
+});
 
 export default app;
